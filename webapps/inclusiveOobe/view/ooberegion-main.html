@@ -15,10 +15,10 @@
 <body class="webapp-inner" data-bind="oobeHotKeys: optinHotKey">
     <div class="body-container" data-bind="oobePageDefaultAction: pageDefaultAction">
         <div class="container-content no-scroll">
-            <oobe-header params="title: $root.title, supportClickableTitle: $root.supportClickableTitle"></oobe-header>
+            <oobe-header style="color: white;" params="title: $root.title, supportClickableTitle: $root.supportClickableTitle"></oobe-header>
             <div class="content-box">
-                <oobe-listview params="items: $root.items, selectedItem: $root.selectedItem, listAccessibleName: $root.listAccessibleName">
-                    <div class="listItemHeader" data-bind="text: displayName"></div>
+                <oobe-listview style="color: white;" params="items: $root.items, selectedItem: $root.selectedItem, listAccessibleName: $root.listAccessibleName">
+                    <div class="listItemHeader" data-bind="text: displayName" style="color: white;"></div>
                 </oobe-listview>
             </div>
         </div>

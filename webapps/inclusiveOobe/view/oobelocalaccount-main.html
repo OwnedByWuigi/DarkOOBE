@@ -12,23 +12,22 @@
     <script src="/core/js/requirePath-config-core.js"></script>
     <script data-main="/webapps/inclusiveOobe/js/oobelocalaccount-page.js" src="/lib/require.js"></script>
 </head>
-<body class="webapp-inner">
+<body class="webapp-inner" style="color:white;">
     <script type="text/html" id="panel-template">
-        <div class="oobe-panel" data-bind="css: { hasError: ($data.errorText && $data.errorText() != '') },
+        <div class="oobe-panel" style="color:white;" data-bind="css: { hasError: ($data.errorText && $data.errorText() != '') },
              attr: { 'data-panel-index': KoHelpers.getElementIndex($element.parentElement), 'data-panel-id': id }, panelIndexVisible: $root.currentPanelIndex">
             <!-- ko if: !$root.learnMoreVisible() -->
-            <div class="container-content">
+            <div class="container-content" style="color:white;">
                 <oobe-header params="title: $root.resourceStrings[titleResourceId],
                                      subtitle: $root.resourceStrings[subTitleResourceId]"></oobe-header>
                 <!-- ko if: !$root.isLiteWhitePersonality-->
                 <i class="icon icon-large icon-user icon-user-nofill" role="img" data-bind="attr: { 'aria-label': $root.resourceStrings.UserIconAriaLabel }"></i>
                 <!-- /ko -->
-                <div class="content-box input-container_withToolTip scrollable">
+                <div class="content-box scrollable" style="color:white;">
                     <!-- ko if: $root.isLiteWhitePersonality-->
-                    <h3 class="input-label" data-bind="attr: { id: $data.labelResourceId }, text: $root.resourceStrings[labelResourceId]"></h3>
+                    <h3 style="color:white;" class="input-label" data-bind="attr: { id: $data.labelResourceId }, text: $root.resourceStrings[labelResourceId]"></h3>
                     <!-- /ko -->
-                    <oobe-textinput params="id: $data.id,
-                                        placeHolder: $root.resourceStrings[placeholderResourceId],
+                    <oobe-textinput params="placeHolder: $root.resourceStrings[placeholderResourceId],
                                         inputLabelId: $root.isLiteWhitePersonality ? $data.labelResourceId : null,
                                         inputText: inputText,
                                         inputType: $data.inputType,
@@ -62,38 +61,38 @@
                 <div class="voice-over" data-bind="html: $root.resourceStrings[voiceOverResourceId]"></div>
                 <div class="error-voice-over" data-bind="html: errorVoiceOver"></div>
             </div>
-            <oobe-footer params="flexStartHyperLinks: $root.flexStartHyperLinks, flexEndButtons: [{ automationId: 'OobeLocalNextButton', buttonText: $root.resourceStrings.NextButtonText, buttonClickHandler: $root.submitPanel, disableControl: $root.disableControl, isPrimaryButton: true}]"></oobe-footer>
+            <oobe-footer style="color:white;" params="flexStartHyperLinks: $root.flexStartHyperLinks, flexEndButtons: [{ buttonText: $root.resourceStrings.NextButtonText, buttonClickHandler: $root.submitPanel, disableControl: $root.disableControl, isPrimaryButton: true}]"></oobe-footer>
             <!-- /ko -->
             <!-- ko if: $root.learnMoreVisible() -->
             <div class="container-content">
                 <oobe-header params="title: $root.resourceStrings['AgeConfirmationLearnMoreTitle'],
                                      subtitle: ''"></oobe-header>
-                <div class="iframe-row med-iframe">
+                <div style="color:white;" class="iframe-row med-iframe">
                     <iframe class="eula-iframe" x-ms-format-detection="none" sandbox="allow-same-origin allow-scripts" data-bind="iframeContent: { content:$root.learnMoreContent, dir:document.documentElement.dir, focusBody: true }, attr: { 'data-iframe-index': KoHelpers.getElementIndex($element.parentElement.parentElement.parentElement.parentElement), 'aria-label': $root.resourceStrings['AgeConfirmationLearnMoreTitle'] }"></iframe>
                 </div>
-                <oobe-footer params="flexEndButtons: [{ buttonText: $root.resourceStrings['AgeConfirmationContinueButtonText'], buttonClickHandler: $root.ageConfirmationLearnMoreContinueHandler, disableControl: $root.disableControl, isPrimaryButton: true}]"></oobe-footer>
+                <oobe-footer style="color:white;"  params="flexEndButtons: [{ buttonText: $root.resourceStrings['AgeConfirmationContinueButtonText'], buttonClickHandler: $root.ageConfirmationLearnMoreContinueHandler, disableControl: $root.disableControl, isPrimaryButton: true}]"></oobe-footer>
             </div>
             <!-- /ko -->
         </div>
     </script>
     <script type="text/html" id="panel-template-sqsa">
-        <div class="oobe-panel" data-bind="css: { hasError: ($data.errorText && $data.errorText() != '' && (!$data.errorTextDropdown || ($data.errorTextDropdown && $data.errorTextDropdown()))) },
+        <div class="oobe-panel" style="color:white;" data-bind="css: { hasError: ($data.errorText && $data.errorText() != '' && (!$data.errorTextDropdown || ($data.errorTextDropdown && $data.errorTextDropdown()))) },
              attr: { 'data-panel-index': KoHelpers.getElementIndex($element.parentElement), 'data-panel-id': id }, panelIndexVisible: $root.currentPanelIndex">
             <!-- ko if: !$root.learnMoreVisible() -->
             <div class="container-content">
-                <oobe-header params="title: $root.resourceStrings[titleResourceId],
+                <oobe-header style="color:white;" params="title: $root.resourceStrings[titleResourceId],
                                      subtitle: $root.resourceStrings[subTitleResourceId]"></oobe-header>
                 <!-- ko if: !$root.isLiteWhitePersonality-->
                 <i class="icon icon-large icon-user icon-user-nofill" role="img" data-bind="attr: { 'aria-label': $root.resourceStrings.UserIconAriaLabel }"></i>
                 <!-- /ko -->
-                <div class="content-box scrollable">
+                <div style="color:white;" class="content-box scrollable">
                     <!-- ko if: $root.isLiteWhitePersonality-->
-                    <h3 class="input-label" data-bind="text: $data.optionsPlaceholder"></h3>
+                    <h3 style="color:white;" class="input-label" data-bind="text: $data.optionsPlaceholder"></h3>
                     <!-- /ko -->
-                    <div class="template-input input-centered">
-                        <div class="input-errorDialog" data-bind="if: ($data.errorTextDropdown && ($data.errorTextDropdown() != ''))">
-                            <div class="errorDialog-dialogRoot tooltipType_error template-tooltip" aria-live="assertive" role="alert" data-bind="attr: { 'aria-label': $data.errorTextDropdown }">
-                                <p aria-hidden="true" data-bind="text: $data.errorTextDropdown"></p>
+                    <div style="color:white;" class="template-input input-centered">
+                        <div style="color:white;" class="input-errorDialog" data-bind="if: ($data.errorTextDropdown && ($data.errorTextDropdown() != ''))">
+                            <div style="color:white;" class="errorDialog-dialogRoot tooltipType_error template-tooltip" aria-live="assertive" role="alert" data-bind="attr: { 'aria-label': $data.errorTextDropdown }">
+                                <p style="color:white;" aria-hidden="true" data-bind="text: $data.errorTextDropdown"></p>
                             </div>
                         </div>
                         <select id="securityQuestionDropdown" class="win-dropdown" role="combobox" autofocus=true
@@ -137,7 +136,7 @@
                 <div class="voice-over" data-bind="html: $root.resourceStrings[voiceOverResourceId]"></div>
                 <div class="error-voice-over" data-bind="html: errorVoiceOver"></div>
             </div>
-            <oobe-footer params="flexStartHyperLinks: $root.flexStartHyperLinks, flexEndButtons: [{ automationId: 'OobeLocalNextButton', buttonText: $root.resourceStrings.NextButtonText, buttonClickHandler: $root.submitPanel, disableControl: $root.disableControl, isPrimaryButton: true}]"></oobe-footer>
+            <oobe-footer style="color:white;" params="flexStartHyperLinks: $root.flexStartHyperLinks, flexEndButtons: [{ buttonText: $root.resourceStrings.NextButtonText, buttonClickHandler: $root.submitPanel, disableControl: $root.disableControl, isPrimaryButton: true}]"></oobe-footer>
             <!-- /ko -->
             <!-- ko if: $root.learnMoreVisible() -->
             <div class="container-content">
@@ -146,13 +145,13 @@
                 <div class="iframe-row med-iframe">
                     <iframe class="eula-iframe" x-ms-format-detection="none" sandbox="allow-same-origin allow-scripts" data-bind="iframeContent: { content:$root.learnMoreContent, dir:document.documentElement.dir, focusBody: true }, attr: { 'data-iframe-index': KoHelpers.getElementIndex($element.parentElement.parentElement.parentElement.parentElement), 'aria-label': $root.resourceStrings['AgeConfirmationLearnMoreTitle'] }"></iframe>
                 </div>
-                <oobe-footer params="flexEndButtons: [{ buttonText: $root.resourceStrings['AgeConfirmationContinueButtonText'], buttonClickHandler: $root.ageConfirmationLearnMoreContinueHandler, disableControl: $root.disableControl, isPrimaryButton: true}]"></oobe-footer>
+                <oobe-footer style="color:white;" params="flexEndButtons: [{ buttonText: $root.resourceStrings['AgeConfirmationContinueButtonText'], buttonClickHandler: $root.ageConfirmationLearnMoreContinueHandler, disableControl: $root.disableControl, isPrimaryButton: true}]"></oobe-footer>
             </div>
             <!-- /ko -->
         </div>
     </script>
-    <main class="body-container" data-bind="oobePageDefaultAction: pageDefaultAction">
-        <div data-bind="template: { name: 'panel-template', data: {
+    <main style="color:white;" class="body-container" data-bind="oobePageDefaultAction: pageDefaultAction">
+        <div style="color:white;" data-bind="template: { name: 'panel-template', data: {
                                                         id: 'username',
                                                         titleResourceId: 'UsernameTitle', subTitleResourceId: 'UserNameLeadHtml',
                                                         labelResourceId: 'UserNameLabelText',
@@ -165,7 +164,7 @@
                                                         inputText: username, maxLength: 20,
                                                         voiceOverResourceId: 'UserNameVoiceOver', errorVoiceOver: userNameVoiceOverErrorString
                          } }"></div>
-        <div data-bind="template: { name: 'panel-template', data: {
+        <div style="color:white;" data-bind="template: { name: 'panel-template', data: {
                                                         id: 'password',
                                                         titleResourceId: 'PasswordTitle', subTitleResourceId: 'PasswordLeadHtml',
                                                         placeholderResourceId: 'PasswordPlaceHolder', inputType: 'password',
@@ -178,7 +177,7 @@
                                                         inputText: password, maxLength: 127,
                                                         voiceOverResourceId: 'PasswordVoiceOver', errorVoiceOver: passwordVoiceOverErrorString
                          } }"></div>
-        <div data-bind="template: { name: 'panel-template', data: {
+        <div style="color:white;" data-bind="template: { name: 'panel-template', data: {
                                                         id: 'passwordConfirm',
                                                         titleResourceId: 'PasswordConfirmTitle', subTitleResourceId: 'PasswordConfirmLeadText',
                                                         labelResourceId: 'PasswordConfirmLabelText',
@@ -191,7 +190,7 @@
                                                         voiceOverResourceId: 'PasswordConfirmVoiceOver', errorVoiceOver: passwordConfirmVoiceOverErrorString
                          } }"></div>
         <!-- ko if: !showSecurityQuestionFeature -->
-        <div data-bind="template: { name: 'panel-template', data: {
+        <div style="color:white;" data-bind="template: { name: 'panel-template', data: {
                                                         id: 'passwordHint',
                                                         titleResourceId: 'PasswordHintTitle', subTitleResourceId: 'PasswordHintLeadText',
                                                         placeholderResourceId: 'PasswordHintPlaceHolder',
