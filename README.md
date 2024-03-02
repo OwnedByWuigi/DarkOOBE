@@ -1,3 +1,6 @@
-# The Windows 11 OOBE
-### 29.02.2024
-Source code of the Windows 11 OOBE, as shown in [this video](https://go.enderman.ch/aMawC).
+# The Windows 11 OOBE, patched for the darkness.
+## v0.50 (Some pages not patched for dark)
+
+### Known issues
+
+- Name your PC and Microsoft account pages do not work (cannot fix)
